@@ -1,0 +1,49 @@
+<div class="container">
+    <h1 class="text-center">Listado de Empleados</h1>
+
+    <form id="filterForm" method="POST" action="/filter">
+            <div class="mb-3" style="width: 300px; display: inline-block; margin-right: 10px;">
+                <label for="disabledTextInput" class="form-label"></label>
+                <input name="nationalidnumber" type="text" id="disabledTextInput" class="numberNacional" placeholder="Número Nacional">
+            </div>
+
+            <div class="mb-3" style="width: 300px; display: inline-block; margin-right: 10px;">
+                <label for="disabledTextInput" class="form-label"></label>
+                <input name="fechaInicio" type="date" id="disabledTextInput" class="fechaInicio" placeholder="Fecha inicio">
+            </div>
+
+            <div class="mb-3" style="width: 300px; display: inline-block; margin-right: 10px;">
+                <label for="disabledTextInput" class="form-label"></label>
+                <input name="fechaTermino" type="date" id="disabledTextInput" class="fechaTermino" placeholder="Fecha de término">
+            </div>
+
+        <button type="submit" class="btn btn-primary" style="display: inline-block; margin-right: 10px;">Filtrar</button>
+    </form>
+
+
+    <!--Tabla resultados -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">businessentityid</th>
+                <th scope="col">nationalidnumber</th>
+                <th scope="col">jobitle</th>
+                <th scope="col">hiredate</th>
+                <th scope="col">vacationhours</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each employee}}
+                <tr>
+                    <td>{{businessentityid}}</td>
+                    <td>{{nationalidnumber}}</td>
+                    <td>{{jobtitle}}</td>
+                    <td>{{hiredate}}</td>
+                    <td>{{vacationhours}}</td>
+                </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+
+</div>
